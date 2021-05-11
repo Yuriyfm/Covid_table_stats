@@ -1,0 +1,1 @@
+Covid_table. table with world statistics on covid from the Kaggle dataset. Python/django.

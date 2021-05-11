@@ -1,0 +1,13 @@
+{% extends 'covid_dataset/layout.html' %}
+{% block title %}Карта{% endblock %}
+{% block content%}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>Карта заболеваемости COVID-19</p>
+    </div>
+    <div class="pict">
+        <a href="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">
+            <img src="static/covid_dataset/img/map.png" alt="map">
+        </a>
+    </div>
+{% endblock %}

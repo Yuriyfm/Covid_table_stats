@@ -1,0 +1,55 @@
+{% extends 'covid_dataset/layout.html' %}
+{% load static %}
+
+{% block title %}Главная страница{% endblock %}
+{% block content%}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>Мировая статистика заболеваемости COVID-19</p>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Enter country" class="form-control">
+        <table id="myTable" class="table table-dark table-striped table-hover table-bordered caption-top">
+        <caption>table 1</caption>
+          <tr>
+            <th>Country</th>
+            <th>Confirmed</th>
+            <th>Deaths</th>
+            <th>Recovered</th>
+            <th>Region</th>
+            <th>ID</th>
+          </tr>
+        {% for p in posts %}
+          <tr>
+            <td>{{ p.country }}</td>
+            <td>{{ p.confirmed }}</td>
+            <td>{{ p.deaths }}</td>
+            <td>{{ p.recovered }}</td>
+            <td>{{ p.who_region }}</td>
+            <td>{{ p.country_id }}</td>
+          </tr>
+        {% endfor %}
+    </div>
+
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+{% endblock %}

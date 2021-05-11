@@ -1,0 +1,29 @@
+{% load static %} <!--подключаем папку static -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block  title%}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'covid_dataset/css/covid_dataset.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+</head>
+<body>
+    <aside>
+        <h3>Навигация</h3>
+        <ul>
+            <a href="{% url 'home' %}"><li>Мировая статистика</li></a>
+            <a href="{% url 'map' %}"><li>Карта заболеваемости</li></a>
+            <a href="{% url 'rus_stat' %}"><li>Статистика по России</li></a>
+            <a href="{% url 'vac' %}"><li>Мировая статистика вакцинации</li></a>
+        </ul>
+    </aside>
+    <main>
+        {% block content%}
+        {% endblock %}
+    </main>
+</body>
+</html>

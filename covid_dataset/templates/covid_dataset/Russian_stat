@@ -1,0 +1,8 @@
+{% extends 'covid_dataset/layout.html' %}
+{% block title %}Статистика по России{% endblock %}
+{% block content%}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>Статистика заболеваемости COVID-19 по России</p>
+    </div>
+{% endblock %}

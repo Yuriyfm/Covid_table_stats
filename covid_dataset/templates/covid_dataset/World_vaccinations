@@ -1,0 +1,9 @@
+{% extends 'covid_dataset/layout.html' %}
+{% block title %}Вакцинация{% endblock %}
+{% block content%}
+    <div class="features">
+        <h1>{{ title }}</h1>
+        <p>Мировая статистика вакцинации от COVID-19</p>
+    </div>
+{% endblock %}
+
